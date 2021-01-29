@@ -90,12 +90,26 @@ class ViewController: UIViewController {
 
 	
 	@IBAction func buttonTapped(_ sender: UIButton) {
-		overShapeLayer.strokeEnd += 0.2
-		if overShapeLayer.strokeEnd == 1 {
-			performSegue(withIdentifier: "showSecondScreen", sender: nil)
-		}
-//		showSecondScreen
+//		overShapeLayer.strokeEnd += 0.2
+//		if overShapeLayer.strokeEnd == 1 {
+//			performSegue(withIdentifier: "showSecondScreen", sender: self)
+//		}
+		let animation = CABasicAnimation(keyPath: "strokeEnd")
+		animation.toValue = 1
+		animation.duration = 2
+		animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+		animation.fillMode = .both
+		animation.isRemovedOnCompletion = false
+		animation.delegate = self
+		
+		overShapeLayer.add(animation, forKey: nil)
 	}
 	
+}
+
+extension ViewController: CAAnimationDelegate {
+	func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+		performSegue(withIdentifier: "showSecondScreen", sender: self)
+	}
 }
 

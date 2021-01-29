@@ -78,6 +78,9 @@
                                 <state key="normal" title="Take the cup!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="eCj-Mp-m2f" eventType="touchUpInside" id="dz6-oZ-UbU"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winner" translatesAutoresizingMaskIntoConstraints="NO" id="USk-Kn-FM5">
                                 <rect key="frame" x="107" y="348" width="200" height="200"/>
