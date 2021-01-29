@@ -1,24 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CALayerDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlH-8K-fMf">
+                                <rect key="frame" x="147" y="752" width="120" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="XkO-ol-YEp"/>
+                                    <constraint firstAttribute="width" constant="120" id="lOj-MC-xr8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Tap me!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="worker" translatesAutoresizingMaskIntoConstraints="NO" id="4kG-so-J8w">
+                                <rect key="frame" x="107" y="94" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Ckr-WQ-Ex9"/>
+                                    <constraint firstAttribute="width" secondItem="4kG-so-J8w" secondAttribute="height" multiplier="1:1" id="lVP-Uz-ue4"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NlH-8K-fMf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Czi-ua-ABc"/>
+                            <constraint firstItem="4kG-so-J8w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="GAn-5X-VMX"/>
+                            <constraint firstItem="4kG-so-J8w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gaw-6W-qAE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NlH-8K-fMf" secondAttribute="bottom" constant="50" id="wO6-vA-vdI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="NlH-8K-fMf" id="NWV-qj-QeS"/>
+                        <outlet property="imageView" destination="4kG-so-J8w" id="eI5-Pk-3lo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20" y="17"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="s7D-11-uzH">
+            <objects>
+                <viewController id="eCj-Mp-m2f" customClass="SecondViewController" customModule="CALayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BcC-tF-Rad">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6g4-dP-S6b">
+                                <rect key="frame" x="107" y="752" width="200" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="PN5-8y-OFh"/>
+                                    <constraint firstAttribute="height" constant="60" id="sa4-at-qgm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Take the cup!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winner" translatesAutoresizingMaskIntoConstraints="NO" id="USk-Kn-FM5">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="NRl-YV-Fpi"/>
+                                    <constraint firstAttribute="width" secondItem="USk-Kn-FM5" secondAttribute="height" multiplier="1:1" id="y2z-tb-GUY"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8W7-fL-aBQ"/>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6g4-dP-S6b" firstAttribute="centerX" secondItem="BcC-tF-Rad" secondAttribute="centerX" id="SKf-z2-Onb"/>
+                            <constraint firstItem="USk-Kn-FM5" firstAttribute="centerX" secondItem="BcC-tF-Rad" secondAttribute="centerX" id="pOE-KP-OHO"/>
+                            <constraint firstItem="USk-Kn-FM5" firstAttribute="centerY" secondItem="BcC-tF-Rad" secondAttribute="centerY" id="rgq-l0-3Q3"/>
+                            <constraint firstItem="8W7-fL-aBQ" firstAttribute="bottom" secondItem="6g4-dP-S6b" secondAttribute="bottom" constant="50" id="srl-kW-SK3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="6g4-dP-S6b" id="eGt-5C-Isk"/>
+                        <outlet property="imageView" destination="USk-Kn-FM5" id="N3r-4z-IcW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oIg-Iy-iiO" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728" y="17"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="winner" width="1000" height="1000"/>
+        <image name="worker" width="1000" height="1000"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
