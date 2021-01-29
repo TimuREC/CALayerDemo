@@ -8,6 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+	
+	var gradientLayer: CAGradientLayer! {
+		didSet {
+			gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+			gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+			let startColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1).cgColor
+			let endColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1).cgColor
+			gradientLayer.colors = [startColor, endColor]
+		}
+	}
 
 	@IBOutlet weak var imageView: UIImageView! {
 		didSet {
@@ -27,9 +37,17 @@ class ViewController: UIViewController {
 		}
 	}
 	
+	override func viewDidLayoutSubviews() {
+		gradientLayer.frame = CGRect(x: 0, y: 0,
+									 width: self.view.frame.size.width,
+									 height: self.view.frame.size.height)
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+		
+		gradientLayer = CAGradientLayer()
+		view.layer.insertSublayer(gradientLayer, at: 0)
 	}
 
 
