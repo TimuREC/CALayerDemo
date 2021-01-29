@@ -26,16 +26,6 @@ class View: UIView {
 		layer.mask = shapeLayer
 	}
 	
-//	override class func prepareForInterfaceBuilder() {
-//		setNeedsLayout()
-//	}
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+	
 
 }
