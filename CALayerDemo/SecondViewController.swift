@@ -86,6 +86,6 @@ class SecondViewController: UIViewController {
 
 extension SecondViewController: CAAnimationDelegate {
 	func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-		print("Get Prize")
+		performSegue(withIdentifier: "showThirdScreen", sender: self)
 	}
 }
