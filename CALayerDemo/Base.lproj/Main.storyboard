@@ -28,6 +28,9 @@
                                 <state key="normal" title="Tap me!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="eCj-Mp-m2f" kind="show" id="bZw-Bk-h6b"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="worker" translatesAutoresizingMaskIntoConstraints="NO" id="4kG-so-J8w">
                                 <rect key="frame" x="107" y="94" width="200" height="200"/>
@@ -58,7 +61,7 @@
         <!--Second View Controller-->
         <scene sceneID="s7D-11-uzH">
             <objects>
-                <viewController id="eCj-Mp-m2f" customClass="SecondViewController" customModule="CALayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="eCj-Mp-m2f" customClass="SecondViewController" customModule="CALayerDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BcC-tF-Rad">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,6 +95,7 @@
                             <constraint firstItem="8W7-fL-aBQ" firstAttribute="bottom" secondItem="6g4-dP-S6b" secondAttribute="bottom" constant="50" id="srl-kW-SK3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jb2-47-sds"/>
                     <connections>
                         <outlet property="button" destination="6g4-dP-S6b" id="eGt-5C-Isk"/>
                         <outlet property="imageView" destination="USk-Kn-FM5" id="N3r-4z-IcW"/>
