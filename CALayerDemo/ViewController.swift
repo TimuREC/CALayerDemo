@@ -9,6 +9,28 @@ import UIKit
 
 class ViewController: UIViewController {
 	
+	var shapeLayer: CAShapeLayer! {
+		didSet {
+			shapeLayer.lineWidth = 20
+			shapeLayer.lineCap = .round
+			shapeLayer.fillColor = nil
+			shapeLayer.strokeEnd  = 1
+			let color = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1).cgColor
+			shapeLayer.strokeColor = color
+		}
+	}
+	
+	var overShapeLayer: CAShapeLayer! {
+		didSet {
+			overShapeLayer.lineWidth = 20
+			overShapeLayer.lineCap = .round
+			overShapeLayer.fillColor = nil
+			overShapeLayer.strokeEnd  = 0
+			let color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+			overShapeLayer.strokeColor = color
+		}
+	}
+	
 	var gradientLayer: CAGradientLayer! {
 		didSet {
 			gradientLayer.startPoint = CGPoint(x: 0, y: 0)
@@ -41,6 +63,17 @@ class ViewController: UIViewController {
 		gradientLayer.frame = CGRect(x: 0, y: 0,
 									 width: self.view.frame.size.width,
 									 height: self.view.frame.size.height)
+		
+		configShapeLayer(shapeLayer)
+		configShapeLayer(overShapeLayer)
+	}
+	
+	private func configShapeLayer(_ shapeLayer: CAShapeLayer) {
+		shapeLayer.frame = view.bounds
+		let path = UIBezierPath()
+		path.move(to: CGPoint(x: self.view.frame.width / 2 - 100, y: self.view.frame.height / 2))
+		path.addLine(to: CGPoint(x: self.view.frame.width / 2 + 100, y: self.view.frame.height / 2))
+		shapeLayer.path = path.cgPath
 	}
 	
 	override func viewDidLoad() {
@@ -48,8 +81,21 @@ class ViewController: UIViewController {
 		
 		gradientLayer = CAGradientLayer()
 		view.layer.insertSublayer(gradientLayer, at: 0)
+		
+		shapeLayer = CAShapeLayer()
+		overShapeLayer = CAShapeLayer()
+		view.layer.addSublayer(shapeLayer)
+		view.layer.addSublayer(overShapeLayer)
 	}
 
-
+	
+	@IBAction func buttonTapped(_ sender: UIButton) {
+		overShapeLayer.strokeEnd += 0.2
+		if overShapeLayer.strokeEnd == 1 {
+			performSegue(withIdentifier: "showSecondScreen", sender: nil)
+		}
+//		showSecondScreen
+	}
+	
 }
 
